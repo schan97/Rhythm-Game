@@ -24,12 +24,20 @@ public class Activator : MonoBehaviour
     {
 		if(Input.GetKeyDown(key))
 		{
-			StartCoroutine(Pressed());
+			sr.color = new Color(0, 0, 0);
+			//StartCoroutine(Pressed());
+		}
+
+		if(Input.GetKeyUp(key))
+		{
+			sr.color = actColor;
 		}
 
         if(Input.GetKeyDown(key) && active)
 		{
 			Destroy(note);
+			AddScore();
+			active = false;
 		}
 
     }
@@ -48,11 +56,18 @@ public class Activator : MonoBehaviour
 		active = false;
 	}
 
+	void AddScore()
+	{
+		PlayerPrefs.SetInt("Score", PlayerPrefs.GetInt("Score") + 100);
+	}
+
+
+	/*
 	IEnumerator Pressed()
 	{
 		sr.color = new Color(0, 0, 0);
 		yield return new WaitForSeconds(0.05f);
 		sr.color = actColor;
 	}
-
+	  */
 }
