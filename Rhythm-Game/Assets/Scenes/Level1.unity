@@ -468,6 +468,28 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3150149890059509359, guid: 982a8697d5119904b831863a13b386a8,
+        type: 3}
+      propertyPath: createMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3150149890059509359, guid: 982a8697d5119904b831863a13b386a8,
+        type: 3}
+      propertyPath: createNote
+      value: 
+      objectReference: {fileID: 5408774751274900360, guid: 1a5d325f4f262a44da250b611d9cacc2,
+        type: 3}
+    - target: {fileID: 3150149890440530184, guid: 982a8697d5119904b831863a13b386a8,
+        type: 3}
+      propertyPath: createMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3150149890440530184, guid: 982a8697d5119904b831863a13b386a8,
+        type: 3}
+      propertyPath: createNote
+      value: 
+      objectReference: {fileID: 5408774751274900360, guid: 540ac92b0bd076842866dd2d4bb464d2,
+        type: 3}
     - target: {fileID: 3150149890612814276, guid: 982a8697d5119904b831863a13b386a8,
         type: 3}
       propertyPath: m_Name
@@ -528,6 +550,83 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3150149890859027128, guid: 982a8697d5119904b831863a13b386a8,
+        type: 3}
+      propertyPath: createMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3150149890859027128, guid: 982a8697d5119904b831863a13b386a8,
+        type: 3}
+      propertyPath: createNote
+      value: 
+      objectReference: {fileID: 5408774751274900360, guid: db0ed0073d0621c4f88561861a1eff5f,
+        type: 3}
+    - target: {fileID: 3150149890967005516, guid: 982a8697d5119904b831863a13b386a8,
+        type: 3}
+      propertyPath: createMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3150149890967005516, guid: 982a8697d5119904b831863a13b386a8,
+        type: 3}
+      propertyPath: createNote
+      value: 
+      objectReference: {fileID: 5408774751274900360, guid: cee2dbe6780ac7f4db4ca34024251a38,
+        type: 3}
+    - target: {fileID: 3150149891040907365, guid: 982a8697d5119904b831863a13b386a8,
+        type: 3}
+      propertyPath: createMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3150149891040907365, guid: 982a8697d5119904b831863a13b386a8,
+        type: 3}
+      propertyPath: createNote
+      value: 
+      objectReference: {fileID: 5408774751274900360, guid: 07efc4fa7d07e804bbbbc350c991c098,
+        type: 3}
+    - target: {fileID: 3150149891158137572, guid: 982a8697d5119904b831863a13b386a8,
+        type: 3}
+      propertyPath: createMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3150149891158137572, guid: 982a8697d5119904b831863a13b386a8,
+        type: 3}
+      propertyPath: createNote
+      value: 
+      objectReference: {fileID: 5408774751274900360, guid: 7d4c06d2042b6e44091901883e58aae2,
+        type: 3}
+    - target: {fileID: 3150149891479265358, guid: 982a8697d5119904b831863a13b386a8,
+        type: 3}
+      propertyPath: createMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3150149891479265358, guid: 982a8697d5119904b831863a13b386a8,
+        type: 3}
+      propertyPath: createNote
+      value: 
+      objectReference: {fileID: 5408774751274900360, guid: 2de585eeb9c007a4d8fc483eb160bb01,
+        type: 3}
+    - target: {fileID: 3150149891628121086, guid: 982a8697d5119904b831863a13b386a8,
+        type: 3}
+      propertyPath: createMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3150149891628121086, guid: 982a8697d5119904b831863a13b386a8,
+        type: 3}
+      propertyPath: createNote
+      value: 
+      objectReference: {fileID: 5408774751274900360, guid: c26188049bc88a64ebb8e4a4988a0d3d,
+        type: 3}
+    - target: {fileID: 3150149891970091206, guid: 982a8697d5119904b831863a13b386a8,
+        type: 3}
+      propertyPath: createMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3150149891970091206, guid: 982a8697d5119904b831863a13b386a8,
+        type: 3}
+      propertyPath: createNote
+      value: 
+      objectReference: {fileID: 5408774751274900360, guid: d1fc288c4f7563143841c777b20feabe,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 982a8697d5119904b831863a13b386a8, type: 3}
 --- !u!1001 &3645266312182218766
