@@ -12,9 +12,6 @@ public class Activator : MonoBehaviour
 	Color actColor;
 	SpriteRenderer sr;
 
-	public bool createMode;
-	public GameObject createNote;
-
     void Start()
     {
 		sr = GetComponent<SpriteRenderer>();
@@ -24,28 +21,17 @@ public class Activator : MonoBehaviour
 
     void Update()
     {
-		if(createMode)
+		if (Input.GetKeyDown(key))
+			sr.color = new Color(0, 0, 0);
+
+		if (Input.GetKeyUp(key))
+			sr.color = actColor;
+
+        if (Input.GetKeyDown(key) && active)
 		{
-			if(Input.GetKeyDown(key))
-			{
-				Instantiate(createNote, transform.position, Quaternion.identity);
-			}
-		}
-
-		else
-		{
-			if (Input.GetKeyDown(key))
-				sr.color = new Color(0, 0, 0);
-
-			if (Input.GetKeyUp(key))
-				sr.color = actColor;
-
-			if (Input.GetKeyDown(key) && active)
-			{
-				Destroy(note);
-				AddScore();
-				active = false;
-			}
+			Destroy(note);
+			AddScore();
+			active = false;
 		}
     }
 
