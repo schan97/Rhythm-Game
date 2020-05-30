@@ -15,8 +15,13 @@ public class Activator : MonoBehaviour
 	public bool createMode;
 	public GameObject createNote;
 
+	GameObject gm;
+
     void Start()
     {
+		gm = GameObject.Find("GameManager");
+		gm.GetComponent<GameManager>().ResetStreak();
+
 		sr = GetComponent<SpriteRenderer>();
 		actColor = sr.color;
 	}
@@ -47,8 +52,14 @@ public class Activator : MonoBehaviour
 			if (Input.GetKeyDown(key) && active)
 			{
 				Destroy(note);
+				gm.GetComponent<GameManager>().AddStreak();
 				AddScore();
 				active = false;
+			}
+			
+			else if(Input.GetKeyDown(key) && !active)
+			{
+				gm.GetComponent<GameManager>().ResetStreak();
 			}
 		}
     }
@@ -65,11 +76,12 @@ public class Activator : MonoBehaviour
 	void OnTriggerExit2D(Collider2D col)
 	{
 		active = false;
+		//gm.GetComponent<GameManager>().ResetStreak();
 	}
 
 	void AddScore()
 	{
-		PlayerPrefs.SetInt("Score", PlayerPrefs.GetInt("Score") + 100);
+		PlayerPrefs.SetInt("Score", PlayerPrefs.GetInt("Score") + gm.GetComponent<GameManager>().GetScore());
 	}
 
 }
