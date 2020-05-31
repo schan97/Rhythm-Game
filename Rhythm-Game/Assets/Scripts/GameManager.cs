@@ -6,12 +6,13 @@ public class GameManager : MonoBehaviour
 {
 
 	int multiplier = 1;
-	int streak = 0;
-	int point_worth = 10;
+	int combo = 0;
+	int point_worth = 100;
 
     void Start()
     {
 		PlayerPrefs.SetInt("Score", 0);
+		PlayerPrefs.SetInt("HealthBar", 25);
     }
 
 
@@ -22,7 +23,11 @@ public class GameManager : MonoBehaviour
 
 	void OnTriggerEnter2D(Collider2D col)
 	{
-		GetComponent<GameManager>().ResetStreak();
+		if(col.gameObject.tag == "Win")
+		{
+			Win();
+		}
+		GetComponent<GameManager>().ResetCombo();	
 	}
 
 	public int GetScore()
@@ -30,17 +35,23 @@ public class GameManager : MonoBehaviour
 		return point_worth * multiplier;
 	}
 
-	public void AddStreak()
+	public void AddCombo()
 	{
-		streak++;
+		if(PlayerPrefs.GetInt("HealthBar") + 1 < 50)
+		{
+			PlayerPrefs.SetInt("HealthBar", PlayerPrefs.GetInt("HealthBar") + 1);
+		}
+		
 
-		if (streak >= 50)
+		combo++;
+
+		if (combo >= 50)
 			multiplier = 8;
-		else if (streak >= 40)
+		else if (combo >= 40)
 			multiplier = 4;
-		else if (streak >= 30)
+		else if (combo >= 30)
 			multiplier = 3;
-		else if (streak >= 20)
+		else if (combo >= 20)
 			multiplier = 2;
 		else
 			multiplier = 1;
@@ -48,17 +59,36 @@ public class GameManager : MonoBehaviour
 		UpdateGUI();
 	}
 
-	public void ResetStreak()
+	public void ResetCombo()
 	{
-		streak = 0;
+
+		PlayerPrefs.SetInt("HealthBar", PlayerPrefs.GetInt("HealthBar") - 2);
+
+
+		combo = 0;
 		multiplier = 1;
 
 		UpdateGUI();
+
+		if (PlayerPrefs.GetInt("HealthBar") < 0)
+		{
+			Lose();
+		}
+	}
+
+	void Lose()
+	{
+		print("You Lose");
+	}
+
+	void Win()
+	{
+		print("You Win");
 	}
 
 	void UpdateGUI()
 	{
-		PlayerPrefs.SetInt("Streak", streak);
+		PlayerPrefs.SetInt("Combo", combo);
 		PlayerPrefs.SetInt("Multiplier", multiplier);
 	}
 }

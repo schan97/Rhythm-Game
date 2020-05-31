@@ -20,7 +20,7 @@ public class Activator : MonoBehaviour
     void Start()
     {
 		gm = GameObject.Find("GameManager");
-		gm.GetComponent<GameManager>().ResetStreak();
+		gm.GetComponent<GameManager>().ResetCombo();
 
 		sr = GetComponent<SpriteRenderer>();
 		actColor = sr.color;
@@ -52,14 +52,14 @@ public class Activator : MonoBehaviour
 			if (Input.GetKeyDown(key) && active)
 			{
 				Destroy(note);
-				gm.GetComponent<GameManager>().AddStreak();
+				gm.GetComponent<GameManager>().AddCombo();
 				AddScore();
 				active = false;
 			}
 			
 			else if(Input.GetKeyDown(key) && !active)
 			{
-				gm.GetComponent<GameManager>().ResetStreak();
+				gm.GetComponent<GameManager>().ResetCombo();
 			}
 		}
     }
