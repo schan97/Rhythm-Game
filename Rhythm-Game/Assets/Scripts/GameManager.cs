@@ -16,6 +16,8 @@ public class GameManager : MonoBehaviour
 	}
     void Start()
     {
+		PlayerPrefs.SetInt("Start", 0);
+
 		PlayerPrefs.SetInt("HealthBar", 25);
 		PlayerPrefs.SetInt("Score", 0);
 		
@@ -24,7 +26,7 @@ public class GameManager : MonoBehaviour
 		PlayerPrefs.SetInt("Multiplier", 1);
 		PlayerPrefs.SetInt("NotesHit", 0);
 
-		PlayerPrefs.SetInt("Start", 1);
+		//PlayerPrefs.SetInt("Start", 1);
 	}
 
 
