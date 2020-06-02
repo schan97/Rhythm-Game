@@ -17,6 +17,8 @@ public class Activator : MonoBehaviour
 
 	GameObject gm;
 
+	public GameObject hitEffect, goodEffect, perfectEffect;
+
     void Start()
     {
 		gm = GameObject.Find("GameManager");
@@ -58,16 +60,19 @@ public class Activator : MonoBehaviour
 				if(Mathf.Abs(note.transform.position.y) > 0.5f)
 				{
 					AddScore();
+					Instantiate(hitEffect, note.transform.position, hitEffect.transform.rotation);
 				}
 
 				else if (Mathf.Abs(note.transform.position.y) > 0.25f)
 				{
 					AddScoreGood();
+					Instantiate(goodEffect, note.transform.position, goodEffect.transform.rotation);
 				}
 
 				else
 				{
 					AddScorePerfect();
+					Instantiate(perfectEffect, note.transform.position, perfectEffect.transform.rotation);
 				}
 
 

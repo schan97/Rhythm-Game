@@ -99,6 +99,12 @@ MonoBehaviour:
   createMode: 0
   createNote: {fileID: 6991892369365517633, guid: d6f6ef5be2e19f64c87e7bdaf250e731,
     type: 3}
+  hitEffect: {fileID: 7779215613956051771, guid: 60fa3803256bc9c408eabe8ca45c0053,
+    type: 3}
+  goodEffect: {fileID: 7779215613956051771, guid: c547b990249f19d408665e27b4a0b76d,
+    type: 3}
+  perfectEffect: {fileID: 7779215613956051771, guid: 29740600d9cfed64a8cd2473f9a8ff1f,
+    type: 3}
 --- !u!58 &3150149890059509358
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -213,6 +219,12 @@ MonoBehaviour:
   key: 102
   createMode: 0
   createNote: {fileID: 6991892369365517633, guid: 18a9d44925857144f8b69d12b233b830,
+    type: 3}
+  hitEffect: {fileID: 7779215613956051771, guid: 60fa3803256bc9c408eabe8ca45c0053,
+    type: 3}
+  goodEffect: {fileID: 7779215613956051771, guid: c547b990249f19d408665e27b4a0b76d,
+    type: 3}
+  perfectEffect: {fileID: 7779215613956051771, guid: 29740600d9cfed64a8cd2473f9a8ff1f,
     type: 3}
 --- !u!58 &3150149890440530191
 CircleCollider2D:
@@ -368,6 +380,12 @@ MonoBehaviour:
   createMode: 0
   createNote: {fileID: 6991892369365517633, guid: 8845f367976ac734086e90d186f2af77,
     type: 3}
+  hitEffect: {fileID: 7779215613956051771, guid: 60fa3803256bc9c408eabe8ca45c0053,
+    type: 3}
+  goodEffect: {fileID: 7779215613956051771, guid: c547b990249f19d408665e27b4a0b76d,
+    type: 3}
+  perfectEffect: {fileID: 7779215613956051771, guid: 29740600d9cfed64a8cd2473f9a8ff1f,
+    type: 3}
 --- !u!58 &3150149890859027135
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -482,6 +500,12 @@ MonoBehaviour:
   key: 100
   createMode: 0
   createNote: {fileID: 6991892369365517633, guid: 57bed13e423a2e04ba7ec133060c15e9,
+    type: 3}
+  hitEffect: {fileID: 7779215613956051771, guid: 60fa3803256bc9c408eabe8ca45c0053,
+    type: 3}
+  goodEffect: {fileID: 7779215613956051771, guid: c547b990249f19d408665e27b4a0b76d,
+    type: 3}
+  perfectEffect: {fileID: 7779215613956051771, guid: 29740600d9cfed64a8cd2473f9a8ff1f,
     type: 3}
 --- !u!58 &3150149890967005507
 CircleCollider2D:
@@ -598,6 +622,12 @@ MonoBehaviour:
   createMode: 0
   createNote: {fileID: 6991892369365517633, guid: 0943f715084219e4f8a6816be3e44942,
     type: 3}
+  hitEffect: {fileID: 7779215613956051771, guid: 60fa3803256bc9c408eabe8ca45c0053,
+    type: 3}
+  goodEffect: {fileID: 7779215613956051771, guid: c547b990249f19d408665e27b4a0b76d,
+    type: 3}
+  perfectEffect: {fileID: 7779215613956051771, guid: 29740600d9cfed64a8cd2473f9a8ff1f,
+    type: 3}
 --- !u!58 &3150149891040907364
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -712,6 +742,12 @@ MonoBehaviour:
   key: 59
   createMode: 0
   createNote: {fileID: 6991892369365517633, guid: b74e6aac22a38dd4c8bf1ae6c082f321,
+    type: 3}
+  hitEffect: {fileID: 7779215613956051771, guid: 60fa3803256bc9c408eabe8ca45c0053,
+    type: 3}
+  goodEffect: {fileID: 7779215613956051771, guid: c547b990249f19d408665e27b4a0b76d,
+    type: 3}
+  perfectEffect: {fileID: 7779215613956051771, guid: 29740600d9cfed64a8cd2473f9a8ff1f,
     type: 3}
 --- !u!58 &3150149891158137595
 CircleCollider2D:
@@ -828,6 +864,12 @@ MonoBehaviour:
   createMode: 0
   createNote: {fileID: 4033336809084712716, guid: 7499de90745acd045b07bcb36c1ecb23,
     type: 3}
+  hitEffect: {fileID: 7779215613956051771, guid: 60fa3803256bc9c408eabe8ca45c0053,
+    type: 3}
+  goodEffect: {fileID: 7779215613956051771, guid: c547b990249f19d408665e27b4a0b76d,
+    type: 3}
+  perfectEffect: {fileID: 7779215613956051771, guid: 29740600d9cfed64a8cd2473f9a8ff1f,
+    type: 3}
 --- !u!58 &3150149891479265357
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -943,6 +985,12 @@ MonoBehaviour:
   createMode: 0
   createNote: {fileID: 6991892369365517633, guid: 660700389ca8fe542bf18c69730b1c13,
     type: 3}
+  hitEffect: {fileID: 7779215613956051771, guid: 60fa3803256bc9c408eabe8ca45c0053,
+    type: 3}
+  goodEffect: {fileID: 7779215613956051771, guid: c547b990249f19d408665e27b4a0b76d,
+    type: 3}
+  perfectEffect: {fileID: 7779215613956051771, guid: 29740600d9cfed64a8cd2473f9a8ff1f,
+    type: 3}
 --- !u!58 &3150149891628121085
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1057,6 +1105,12 @@ MonoBehaviour:
   key: 32
   createMode: 0
   createNote: {fileID: 6991892369365517633, guid: 02bcacbcee5e65c42929a1229ba09393,
+    type: 3}
+  hitEffect: {fileID: 7779215613956051771, guid: 60fa3803256bc9c408eabe8ca45c0053,
+    type: 3}
+  goodEffect: {fileID: 7779215613956051771, guid: c547b990249f19d408665e27b4a0b76d,
+    type: 3}
+  perfectEffect: {fileID: 7779215613956051771, guid: 29740600d9cfed64a8cd2473f9a8ff1f,
     type: 3}
 --- !u!58 &3150149891970091205
 CircleCollider2D:
