@@ -79,8 +79,11 @@ public class GameManager : MonoBehaviour
 
 	public void ResetCombo()
 	{
-
-		PlayerPrefs.SetInt("HealthBar", PlayerPrefs.GetInt("HealthBar") - 2);
+		if(PlayerPrefs.GetInt("Start") == 1)
+		{
+			PlayerPrefs.SetInt("HealthBar", PlayerPrefs.GetInt("HealthBar") - 2);
+		}
+		
 
 
 		combo = 0;
@@ -104,6 +107,7 @@ public class GameManager : MonoBehaviour
 	void Win()
 	{
 		PlayerPrefs.SetInt("Start", 0);
+
 		if (PlayerPrefs.GetInt("HighScore") < PlayerPrefs.GetInt("Score"))
 			PlayerPrefs.SetInt("HighScore", PlayerPrefs.GetInt("Score"));
 
