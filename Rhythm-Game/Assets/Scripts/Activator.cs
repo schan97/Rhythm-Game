@@ -53,8 +53,24 @@ public class Activator : MonoBehaviour
 			{
 				Destroy(note);
 				gm.GetComponent<GameManager>().AddCombo();
-				AddScore();
 				active = false;
+
+				if(Mathf.Abs(note.transform.position.y) > 0.5f)
+				{
+					AddScore();
+				}
+
+				else if (Mathf.Abs(note.transform.position.y) > 0.25f)
+				{
+					AddScoreGood();
+				}
+
+				else
+				{
+					AddScorePerfect();
+				}
+
+
 			}
 			
 			else if(Input.GetKeyDown(key) && !active)
@@ -82,6 +98,16 @@ public class Activator : MonoBehaviour
 	void AddScore()
 	{
 		PlayerPrefs.SetInt("Score", PlayerPrefs.GetInt("Score") + gm.GetComponent<GameManager>().GetScore());
+	}
+
+	void AddScoreGood()
+	{
+		PlayerPrefs.SetInt("Score", PlayerPrefs.GetInt("Score") + gm.GetComponent<GameManager>().GetScoreGood());
+	}
+
+	void AddScorePerfect()
+	{
+		PlayerPrefs.SetInt("Score", PlayerPrefs.GetInt("Score") + gm.GetComponent<GameManager>().GetScorePerfect());
 	}
 
 }

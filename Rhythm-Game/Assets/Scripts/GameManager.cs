@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour
 	int multiplier = 1;
 	int combo = 0;
 	int point_worth = 100;
+	int point_good = 125;
+	int point_perfect = 150;
 
 	void Awake()
 	{
@@ -47,6 +49,16 @@ public class GameManager : MonoBehaviour
 	public int GetScore()
 	{
 		return point_worth * multiplier;
+	}
+
+	public int GetScoreGood()
+	{
+		return point_good * multiplier;
+	}
+
+	public int GetScorePerfect()
+	{
+		return point_perfect * multiplier;
 	}
 
 	public void AddCombo()

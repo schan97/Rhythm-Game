@@ -5,7 +5,8 @@ using UnityEngine;
 public class Note : MonoBehaviour
 {
 	Rigidbody2D rb;
-	public float speed;
+	//public float speed;
+	public float BPM;
 
 	bool called = false;
 
@@ -24,7 +25,7 @@ public class Note : MonoBehaviour
     {
 		if(PlayerPrefs.GetInt("Start") == 1 && !called)
 		{
-			rb.velocity = new Vector2(0, -speed);
+			rb.velocity = new Vector2(0, (-BPM / 60f) * 4);
 			called = true;
 		}
 		
