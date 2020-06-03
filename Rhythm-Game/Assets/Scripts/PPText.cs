@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class PPText : MonoBehaviour
 {
-	public string name;
+	public string nameText;
 
     void Start()
     {
@@ -15,6 +15,6 @@ public class PPText : MonoBehaviour
 
     void Update()
     {
-		GetComponent<Text>().text = PlayerPrefs.GetInt(name) + "";
+		GetComponent<Text>().text = PlayerPrefs.GetInt(nameText) + "";
     }
 }

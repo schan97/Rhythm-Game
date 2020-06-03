@@ -70,3 +70,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa9b23e8fde9ce54f8e09fd6ff8c3758, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  resultsScreen: {fileID: 0}
+  background: {fileID: 0}
+  activatorSet: {fileID: 0}
+  beatMap: {fileID: 0}

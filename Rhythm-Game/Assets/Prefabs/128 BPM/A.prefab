@@ -326,7 +326,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49362a7f5e054024095345d0b9b72e6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 8.533
+  BPM: 128
 --- !u!222 &4033336809084712717
 CanvasRenderer:
   m_ObjectHideFlags: 0

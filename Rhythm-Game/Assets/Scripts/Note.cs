@@ -28,6 +28,12 @@ public class Note : MonoBehaviour
 			rb.velocity = new Vector2(0, (-BPM / 60f) * 4);
 			called = true;
 		}
+
+		else if(PlayerPrefs.GetInt("Start") == 0 && called)
+		{
+			rb.velocity = new Vector2(0, 0);
+			called = false;
+		}
 		
 	}
 }

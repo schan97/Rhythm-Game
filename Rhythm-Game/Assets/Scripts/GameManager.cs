@@ -12,6 +12,15 @@ public class GameManager : MonoBehaviour
 	int point_good = 125;
 	int point_perfect = 150;
 
+	private AudioSource music;
+
+	public GameObject resultsScreen;
+
+	public GameObject background;
+	public GameObject activatorSet;
+	public GameObject beatMap;
+	public GameObject deleteNotesCollider;
+
 	void Awake()
 	{
 		PlayerPrefs.SetInt("HealthBar", 25);
@@ -20,13 +29,29 @@ public class GameManager : MonoBehaviour
     {
 		PlayerPrefs.SetInt("Start", 0);
 
+		music = FindObjectOfType<AudioSource>();
+		PlayerPrefs.SetString("MusicName", music.name);
+
 		PlayerPrefs.SetInt("HealthBar", 25);
 		PlayerPrefs.SetInt("Score", 0);
+		PlayerPrefs.GetInt("HighScore", 0);
 		
 		PlayerPrefs.SetInt("Combo", 0);
 		PlayerPrefs.SetInt("HighCombo", 0);
 		PlayerPrefs.SetInt("Multiplier", 1);
+
 		PlayerPrefs.SetInt("NotesHit", 0);
+
+		PlayerPrefs.SetInt("TotalNotes", FindObjectsOfType<Note>().Length);
+		
+		PlayerPrefs.SetInt("NormalHits", 0);
+		PlayerPrefs.SetInt("GoodHits", 0);
+		PlayerPrefs.SetInt("PerfectHits", 0);
+		PlayerPrefs.SetInt("MissHits", 0);
+
+		PlayerPrefs.SetFloat("PercentHit", 0);
+		PlayerPrefs.SetString("RankValue", "");
+
 
 		//PlayerPrefs.SetInt("Start", 1);
 	}
@@ -41,23 +66,28 @@ public class GameManager : MonoBehaviour
 	{
 		if(col.gameObject.tag == "Win")
 		{
-			Win();
+			Results();
 		}
+
+		PlayerPrefs.SetInt("MissHits", PlayerPrefs.GetInt("MissHits") + 1);
 		GetComponent<GameManager>().ResetCombo();	
 	}
 
 	public int GetScore()
 	{
+		PlayerPrefs.SetInt("NormalHits", PlayerPrefs.GetInt("NormalHits") + 1);
 		return point_worth * multiplier;
 	}
 
 	public int GetScoreGood()
 	{
+		PlayerPrefs.SetInt("GoodHits", PlayerPrefs.GetInt("GoodHits") + 1);
 		return point_good * multiplier;
 	}
 
 	public int GetScorePerfect()
 	{
+		PlayerPrefs.SetInt("PerfectHits", PlayerPrefs.GetInt("PerfectHits") + 1);
 		return point_perfect * multiplier;
 	}
 
@@ -95,8 +125,6 @@ public class GameManager : MonoBehaviour
 		{
 			PlayerPrefs.SetInt("HealthBar", PlayerPrefs.GetInt("HealthBar") - 2);
 		}
-		
-
 
 		combo = 0;
 		multiplier = 1;
@@ -105,25 +133,57 @@ public class GameManager : MonoBehaviour
 
 		if (PlayerPrefs.GetInt("HealthBar") < 1)
 		{
-			Lose();
+			Results();
+			//Lose()
 		}
 	}
 
-	void Lose()
-	{
-		PlayerPrefs.SetInt("Start", 0);
-		SceneManager.LoadScene("LoseScene");
-		//print("You Lose");
-	}
-
-	void Win()
+	void Results()
 	{
 		PlayerPrefs.SetInt("Start", 0);
 
 		if (PlayerPrefs.GetInt("HighScore") < PlayerPrefs.GetInt("Score"))
 			PlayerPrefs.SetInt("HighScore", PlayerPrefs.GetInt("Score"));
 
-		SceneManager.LoadScene("WinScene");
+		music.Stop();
+
+		float totalHit = PlayerPrefs.GetInt("NormalHits") + PlayerPrefs.GetInt("GoodHits") + PlayerPrefs.GetInt("PerfectHits");
+		float percentHit = (totalHit / PlayerPrefs.GetInt("TotalNotes")) * 100f;
+		percentHit = Mathf.Round(percentHit * 100f) * 0.01f;
+
+
+		PlayerPrefs.SetFloat("PercentHit", percentHit);
+
+		string rankVal = "F";
+
+		if(percentHit > 20)
+		{
+			rankVal = "D";
+			if(percentHit > 35)
+			{
+				rankVal = "C";
+				if (percentHit > 50)
+				{
+					rankVal = "B";
+					if(percentHit > 80)
+					{
+						rankVal = "A";
+						if(percentHit > 90)
+						{
+							rankVal = "S";
+						}
+					}
+				}
+			}
+		}
+
+		PlayerPrefs.SetString("RankValue", rankVal);
+
+		resultsScreen.SetActive(true);
+		background.SetActive(false);
+		activatorSet.SetActive(false);
+		beatMap.SetActive(false);
+		//SceneManager.LoadScene("WinScene");
 		//print("You Win");
 	}
 

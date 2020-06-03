@@ -32,7 +32,9 @@ public class Activator : MonoBehaviour
     void Update()
     {
 		if(createMode)
-		{
+		{	
+			gm.GetComponent<GameManager>().deleteNotesCollider.SetActive(false);
+			gm.GetComponent<Collider2D>().enabled = false;
 			if (Input.GetKeyDown(key))
 			{
 				Instantiate(createNote, transform.position, Quaternion.identity);

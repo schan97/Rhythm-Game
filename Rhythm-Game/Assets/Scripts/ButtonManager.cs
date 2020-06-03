@@ -17,9 +17,15 @@ public class ButtonManager : MonoBehaviour
         
     }
 
-	public void LoadScene()
+	public void PlayAgain()
 	{
-		SceneManager.LoadScene("Level1");
+		Scene scene = SceneManager.GetActiveScene();
+		SceneManager.LoadScene(scene.name);
+	}
+
+	public void SelectSong()
+	{
+		SceneManager.LoadScene("SelectSong");
 	}
 
 	public void Quit()
