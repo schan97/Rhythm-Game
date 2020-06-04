@@ -32,4 +32,9 @@ public class ButtonManager : MonoBehaviour
 	{
 		Application.Quit();
 	}
+
+	public void ResetHighScore()
+	{
+		PlayerPrefs.SetInt("HighScore", 0);
+	}
 }
