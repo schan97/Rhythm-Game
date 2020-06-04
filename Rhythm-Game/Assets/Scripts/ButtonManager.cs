@@ -5,7 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class ButtonManager : MonoBehaviour
 {
-    // Start is called before the first frame update
+	public AudioSource songForLevel;
+
     void Start()
     {
         
@@ -28,6 +29,11 @@ public class ButtonManager : MonoBehaviour
 		SceneManager.LoadScene("SelectSong");
 	}
 
+	public void MainMenu()
+	{
+		SceneManager.LoadScene("MainMenu");
+	}
+
 	public void Quit()
 	{
 		Application.Quit();
@@ -37,4 +43,16 @@ public class ButtonManager : MonoBehaviour
 	{
 		PlayerPrefs.SetInt("HighScore", 0);
 	}
+
+	public void HoverSound()
+	{
+		songForLevel.Play();
+	}
+
+	public void LoadFiestaMusicForestofTides()
+	{
+		SceneManager.LoadScene("Fiesta Music Forest of Tides");
+	}
+
+
 }
