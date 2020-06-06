@@ -74,3 +74,4 @@ MonoBehaviour:
   background: {fileID: 0}
   activatorSet: {fileID: 0}
   beatMap: {fileID: 0}
+  deleteNotesCollider: {fileID: 0}

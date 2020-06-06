@@ -149,7 +149,7 @@ public class GameManager : MonoBehaviour
 
 		float totalHit = PlayerPrefs.GetInt("NormalHits") + PlayerPrefs.GetInt("GoodHits") + PlayerPrefs.GetInt("PerfectHits");
 		float percentHit = (totalHit / PlayerPrefs.GetInt("TotalNotes")) * 100f;
-		percentHit = Mathf.Round(percentHit * 100f) * 0.01f;
+		percentHit = Mathf.Round(percentHit * 100) / 100f;
 
 
 		PlayerPrefs.SetFloat("PercentHit", percentHit);
