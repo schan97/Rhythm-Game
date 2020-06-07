@@ -49,6 +49,11 @@ public class ButtonManager : MonoBehaviour
 		songForLevel.Play();
 	}
 
+	public void HoverStop()
+	{
+		songForLevel.Stop();
+	}
+
 	public void LoadRolemusicw1x()
 	{
 		SceneManager.LoadScene("Rolemusic - w1x");
