@@ -7,7 +7,14 @@ public class ButtonManager : MonoBehaviour
 {
 	public AudioSource songForLevel;
 
-    void Start()
+	Scene currScene;
+
+	void Awake()
+	{
+		currScene = SceneManager.GetActiveScene();
+	}
+
+	void Start()
     {
         
     }
@@ -41,7 +48,7 @@ public class ButtonManager : MonoBehaviour
 
 	public void ResetHighScore()
 	{
-		PlayerPrefs.SetInt("HighScore", 0);
+		PlayerPrefs.SetInt("HighScore" + currScene.name, 0);
 	}
 
 	public void HoverSound()

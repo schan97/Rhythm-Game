@@ -21,6 +21,8 @@ public class GameManager : MonoBehaviour
 	public GameObject beatMap;
 	public GameObject deleteNotesCollider;
 
+	Scene currScene;
+
 	void Awake()
 	{
 		PlayerPrefs.SetInt("HealthBar", 25);
@@ -29,12 +31,14 @@ public class GameManager : MonoBehaviour
     {
 		PlayerPrefs.SetInt("Start", 0);
 
+		currScene = SceneManager.GetActiveScene();
+
 		music = FindObjectOfType<AudioSource>();
 		PlayerPrefs.SetString("MusicName", music.name);
 
 		PlayerPrefs.SetInt("HealthBar", 25);
 		PlayerPrefs.SetInt("Score", 0);
-		PlayerPrefs.GetInt("HighScore", 0);
+		PlayerPrefs.GetInt("HighScore" + currScene.name, 0);
 		
 		PlayerPrefs.SetInt("Combo", 0);
 		PlayerPrefs.SetInt("HighCombo", 0);
@@ -142,8 +146,8 @@ public class GameManager : MonoBehaviour
 	{
 		PlayerPrefs.SetInt("Start", 0);
 
-		if (PlayerPrefs.GetInt("HighScore") < PlayerPrefs.GetInt("Score"))
-			PlayerPrefs.SetInt("HighScore", PlayerPrefs.GetInt("Score"));
+		if (PlayerPrefs.GetInt("HighScore" + currScene.name) < PlayerPrefs.GetInt("Score"))
+			PlayerPrefs.SetInt("HighScore" + currScene.name, PlayerPrefs.GetInt("Score"));
 
 		music.Stop();
 
